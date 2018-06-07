@@ -46,7 +46,7 @@ public class User {
     private Set<Message> messagesReceived;
     private Set<Picture>permittedPictures;
 
-
+    @Id
     public String getUsername() {
         return username;
     }
@@ -285,7 +285,6 @@ public class User {
         this.descrLookingForMore = descrLookingForMore;
     }
 
-    @Id
     public String getEmail() {
         return email;
     }

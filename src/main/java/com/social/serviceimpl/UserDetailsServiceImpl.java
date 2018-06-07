@@ -4,6 +4,7 @@ import com.social.model.Role;
 import com.social.model.User;
 import com.social.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
+@Primary
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
     @Autowired
@@ -32,7 +34,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
             }
             return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
         }else{
-            return null;
+            throw new UsernameNotFoundException(username);
         }
     }
 }
