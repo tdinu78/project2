@@ -19,7 +19,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-import static com.social.security.SecurityConstants.SIGN_UP_URL;
+import static com.social.security.SecurityConstants.*;
 
 @Configuration
 @EnableWebSecurity
@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(SIGN_UP_URL, "/", "/resources/**", "/index").permitAll()
+                .antMatchers(SIGN_UP_URL, RESOURCES_URL, LANDINGPAGE_URL).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
