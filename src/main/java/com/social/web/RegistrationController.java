@@ -1,12 +1,11 @@
 package com.social.web;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.social.model.Location;
 import com.social.model.User;
 import com.social.service.Messages;
 import com.social.service.SecurityService;
 import com.social.service.UserService;
-import com.social.validator.UserValidator;
+import com.social.validators.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,13 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Map;
 
 @Controller
 public class RegistrationController {
