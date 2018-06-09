@@ -1,0 +1,42 @@
+<mdb-navbar SideClass="navbar navbar-expand-lg  navbar-light grey lighten-3 fixed-top scrolling-navbar justify-content-between something" style="max-height: 20px !important;"
+    [containerInside]="false">
+    <!-- justify-content-between -->
+    <logo class="navbar-brand" href="#">
+        <img src="92817_champagne.ico" width="30" height="30" alt="Wedding Something">
+        <span class="ml-2">Wedding Something</span>
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto mt-lg-0 ml-lg-auto">
+            <app-nav-item class="navbar-nav " *ngFor="let item of navItems" [navItem]="item"></app-nav-item>
+            <li class="nav-item" >
+                <!--Dropdown primary-->
+                <div class="dropdown" dropdown>
+
+                    <!--Trigger-->
+                    <a dropdownToggle class="nav-link waves-dark" mdbWavesEffect type="button">
+
+                        <i class="fa fa-ellipsis-h fa-2x opac"></i>
+
+                    </a>
+
+                    <!--Menu-->
+                    <div class="dropdown-menu dropdown-to-left dropdown-primary">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </li>
+            <!--/Dropdown primary-->
+        </ul>
+        <ul class="navbar-nav ml-lg-auto ml-sm-0 mt-lg-0 ">
+            <li class="nav-item mt-lg-0 ">
+                <a class="nav-link waves-dark " mdbWavesEffect href="#">Login</a>
+            </li>
+
+        </ul>
+
+
+    </links>
+</mdb-navbar>

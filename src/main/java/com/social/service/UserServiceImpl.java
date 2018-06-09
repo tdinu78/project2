@@ -1,4 +1,4 @@
-package com.social.serviceimpl;
+package com.social.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.social.model.Location;
@@ -8,7 +8,6 @@ import com.social.repository.LocationRepository;
 import com.social.repository.PicturesRepository;
 import com.social.repository.RoleRepository;
 import com.social.repository.UserRepository;
-import com.social.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

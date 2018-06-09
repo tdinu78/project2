@@ -1,4 +1,4 @@
-package com.social.serviceimpl;
+package com.social.service;
 
 import com.social.model.Role;
 import com.social.model.User;
