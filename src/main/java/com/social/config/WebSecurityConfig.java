@@ -37,7 +37,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(SIGN_UP_URL, RESOURCES_URL, LANDINGPAGE_URL).permitAll()
+                .antMatchers(SIGN_UP_URL, RESOURCES_URL, LANDINGPAGE_URL,
+                        "/themes","/enviroments","/app/**","/test-utils","/assets").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
