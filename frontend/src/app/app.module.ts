@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavItemComponent } from './navbar/nav-item/nav-item.component';
 import { NavItemExtraComponent } from './navbar/nav-item-extra/nav-item-extra.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -14,11 +18,15 @@ import { NavItemExtraComponent } from './navbar/nav-item-extra/nav-item-extra.co
     AppComponent,
     NavbarComponent,
     NavItemComponent,
-    NavItemExtraComponent
+    NavItemExtraComponent,
+    FooterComponent,
+    HomeComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    AppRoutingModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
