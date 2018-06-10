@@ -1,4 +1,4 @@
-package com.social.validator;
+package com.social.validators;
 
 import com.social.model.User;
 import com.social.service.Messages;
