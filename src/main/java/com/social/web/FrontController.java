@@ -47,6 +47,6 @@ public class FrontController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        resp.setContentType("application/json");
+        resp.setContentType("application/json") ;
     }
 }
