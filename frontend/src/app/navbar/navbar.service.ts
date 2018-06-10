@@ -34,11 +34,7 @@ export class NavbarService {
     // cumva trebuie sa duc celelalte elemente intr-o alta componenta (copilul lui  nav-item)
     getNavItems() {
         
-<<<<<<< HEAD
        return this.http.get(this.api)
-=======
-       return this.http.get('http://localhost:8080/api/getNavItems')
->>>>>>> 9c0777ed2d57f5988b7e79d1e222826f88003671
         .pipe(map(
             (response: Response) => {
                 const data = response.json();
