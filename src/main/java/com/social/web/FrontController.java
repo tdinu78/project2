@@ -24,16 +24,16 @@ public class FrontController {
     @Autowired
     MenuRepository menuRepository;
 
-    @RequestMapping(value="/api/askmenu", params="menuType")
-    public void askMenu(@RequestParam("menuType") String menuType, HttpServletResponse resp) {
-        List<Menus> menus = menuRepository.fetchByType(menuType);
+    @RequestMapping(value="/api/getNavItems")
+    public void getNavItems(HttpServletResponse resp) {
+        List<Menus> menus = menuRepository.fetchByType("header");
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject;
         Map resMap;
         for (Menus oneMenu: menus) {
             resMap = new HashMap();
             resMap.put("name", oneMenu.getMenu_name());
-            resMap.put("priority", oneMenu.getPosition());
+            resMap.put("prio", oneMenu.getPosition());
             jsonObject = new JSONObject(resMap);
             jsonArray.put(jsonObject);
         }

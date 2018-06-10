@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n\n<app-navbar></app-navbar>\n\n\n<div class=\"container-fluid\">\n        \n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n    <h1>Scroll down</h1>\n    <br>\n  \n  </div>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n\r\n<app-navbar></app-navbar>\r\n\r\n\r\n<div class=\"container-fluid\">\r\n        \r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n    <h1>Scroll down</h1>\r\n    <br>\r\n  \r\n  </div>"
 
 /***/ }),
 
@@ -143,7 +143,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<li class=\"nav-item waves-light hoverable \" mdbWavesEffect>\n  <a class=\"nav-link\" href=\"#\"> {{ navItem.name }}\n    <!-- <span class=\"sr-only\">(current)</span> -->\n  </a>\n</li>\n\n"
+module.exports = "\r\n<li class=\"nav-item waves-light hoverable \" mdbWavesEffect>\r\n  <a class=\"nav-link\" href=\"#\"> {{ navItem.name }}\r\n    <!-- <span class=\"sr-only\">(current)</span> -->\r\n  </a>\r\n</li>\r\n\r\n"
 
 /***/ }),
 
@@ -312,7 +312,7 @@ var NavbarService = /** @class */ (function () {
         this.http = http;
     }
     NavbarService.prototype.getNavItems = function () {
-        return this.http.get('http://5b17c999f5c9b700145512dc.mockapi.io/api/getNavItems')
+        return this.http.get('http://localhost:8080/api/getNavItems')
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (response) {
             var data = response.json();
             if (data.rc !== 0) {
@@ -418,7 +418,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\wedding\project2\frontend\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\tdinu\IdeaProjects\project2\frontend\src\main.ts */"./src/main.ts");
 
 
 /***/ })

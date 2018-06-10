@@ -10,7 +10,7 @@ export class NavbarService {
 
     getNavItems() {
         
-       return this.http.get('http://5b17c999f5c9b700145512dc.mockapi.io/api/getNavItems')
+       return this.http.get('http://localhost:8080/api/getNavItems')
         .pipe(map(
             (response: Response) => {
                 const data = response.json();
