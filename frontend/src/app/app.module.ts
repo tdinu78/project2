@@ -6,12 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavItemComponent } from './navbar/nav-item/nav-item.component';
+import { NavItemExtraComponent } from './navbar/nav-item-extra/nav-item-extra.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    NavItemComponent
+    NavItemComponent,
+    NavItemExtraComponent
   ],
   imports: [
     BrowserModule,

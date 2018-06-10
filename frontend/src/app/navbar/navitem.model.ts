@@ -1,11 +1,11 @@
 
 export class NavItem {
     public name: string;
-    public prio: number;
+    public priority: number;
     
 
-    constructor(name: string, prio: number) {
+    constructor(name: string, priority: number) {
         this.name = name;
-        this.prio = prio;
+        this.priority = priority;
     }
 }
