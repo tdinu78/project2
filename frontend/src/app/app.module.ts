@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SearchfrmComponent } from './searchfrm/searchfrm.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     NavItemExtraComponent,
     FooterComponent,
     HomeComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    SearchfrmComponent
   ],
   imports: [
     BrowserModule,
