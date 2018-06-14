@@ -12,7 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchfrmComponent } from './searchfrm/searchfrm.component';
-
+import { AgmCoreModule } from '@agm/core';
+import { GglplcsComponent } from './gglplcs/gglplcs.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,17 @@ import { SearchfrmComponent } from './searchfrm/searchfrm.component';
     FooterComponent,
     HomeComponent,
     CategoriesComponent,
-    SearchfrmComponent
+    SearchfrmComponent,
+    GglplcsComponent
   ],
   imports: [
+      AgmCoreModule.forRoot({
+          apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          libraries: ["places"]
+      }),
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot()

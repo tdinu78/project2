@@ -1,4 +1,4 @@
-<div class="card bg-light text-dark">
+<div class="card bg-light">
 
     <div class="card-body">
         <div class="md-form form-sm">
@@ -8,8 +8,7 @@
         </div>
         <div class="md-form form-sm">
             <i class="fa fa-envelope prefix"></i>
-            <input mdbInputDirective type="text" id="form2" class="form-control form-control-sm">
-            <label for="form2" class="">Locatie</label>
+            <app-gglplcs></app-gglplcs>
         </div>
         <div class="md-form form-sm">
             <i class="fa fa-envelope prefix"></i>
@@ -26,40 +25,41 @@
             <input mdbInputDirective type="text" id="form5" class="form-control form-control-sm">
             <label for="form5" class="">Pret meniu</label>
         </div>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form6" type="checkbox"> Facilitati outdoor
-            </label>
+        <div class="form-inline">
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form6" type="checkbox">
+                <label class="form-check-label">Outdoor</label>
+            </div>
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form7" type="checkbox">
+                <label class="form-check-label">Cazare</label>
+            </div>
         </div>
         <br>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form7" type="checkbox"> Cazare
-            </label>
+        <div class="form-inline">
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form8" type="checkbox">
+                <label class="form-check-label">Artificii</label>
+            </div>
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form9" type="checkbox">
+                <label class="form-check-label">Divertisment</label>
+            </div>
         </div>
         <br>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form8" type="checkbox"> Divertisment
-            </label>
+        <div class="form-inline">
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form10" type="checkbox">
+                <label class="form-check-label">Aranjare salon</label>
+            </div>
+            <div class="form-check mr-3">
+                <input class="form-check-input" id="form11" type="checkbox">
+                <label class="form-check-label">Parcare</label>
+            </div>
         </div>
         <br>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form9" type="checkbox"> Artificii
-            </label>
-        </div>
-        <br>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form10" type="checkbox"> Aranjare salon
-            </label>
-        </div>
-        <br>
-        <div class="md-form form-sm">
-            <label class="form-check-label">
-                <input class="form-check-input" id="form11" type="checkbox"> Parcare
-            </label>
+        <div class="text-center py-4 mt-3">
+            <button class="btn btn-cyan" type="submit">Cauta</button>
         </div>
     </div>
 </div>
