@@ -15,6 +15,8 @@ import { SearchfrmComponent } from './searchfrm/searchfrm.component';
 import { AgmCoreModule } from '@agm/core';
 import { GglplcsComponent } from './gglplcs/gglplcs.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSliderModule, MatSlideToggleModule, MatCheckboxModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
-    MDBBootstrapModule.forRoot()
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MDBBootstrapModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

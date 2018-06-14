@@ -1,4 +1,4 @@
-<div class="card bg-light">
+<div class="card">
 
     <div class="card-body">
         <div class="md-form form-sm">
@@ -12,54 +12,51 @@
         </div>
         <div class="md-form form-sm">
             <i class="fa fa-envelope prefix"></i>
-            <input mdbInputDirective type="text" id="form3" class="form-control form-control-sm">
-            <label for="form3" class="">Numar minim invitati</label>
-        </div>
-        <div class="md-form form-sm">
-            <i class="fa fa-envelope prefix"></i>
-            <input mdbInputDirective type="text" id="form4" class="form-control form-control-sm">
-            <label for="form4" class="">Numar maxim invitati</label>
-        </div>
-        <div class="md-form form-sm">
-            <i class="fa fa-envelope prefix"></i>
             <input mdbInputDirective type="text" id="form5" class="form-control form-control-sm">
-            <label for="form5" class="">Pret meniu</label>
+            <label for="form5" class="">Pret maxim meniu</label>
         </div>
-        <div class="form-inline">
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form6" type="checkbox">
+        <div class="md-form form-sm">
+            <h6 class="m-b-0">Numar minim invitati</h6>
+            <mat-slider thumbLabel></mat-slider>
+        </div>
+        <div class="md-form form-sm">
+            <h6 class="m-b-0">Numar maxim invitati</h6>
+            <mat-slider thumbLabel></mat-slider>
+        </div>
+        <div class="row">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Outdoor</label>
             </div>
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form7" type="checkbox">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Cazare</label>
             </div>
         </div>
         <br>
-        <div class="form-inline">
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form8" type="checkbox">
+        <div class="row">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Artificii</label>
             </div>
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form9" type="checkbox">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Divertisment</label>
             </div>
         </div>
         <br>
-        <div class="form-inline">
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form10" type="checkbox">
+        <div class="row">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Aranjare salon</label>
             </div>
-            <div class="form-check mr-3">
-                <input class="form-check-input" id="form11" type="checkbox">
+            <div class="form-check col-sm-6">
+                <mat-checkbox class="mr-1"></mat-checkbox>
                 <label class="form-check-label">Parcare</label>
             </div>
         </div>
-        <br>
         <div class="text-center py-4 mt-3">
-            <button class="btn btn-cyan" type="submit">Cauta</button>
+            <button class="btn btn-cyan" (click)="doSearch()">Cauta</button>
         </div>
     </div>
 </div>
