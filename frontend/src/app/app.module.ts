@@ -16,7 +16,13 @@ import { AgmCoreModule } from '@agm/core';
 import { GglplcsComponent } from './gglplcs/gglplcs.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSliderModule, MatSlideToggleModule, MatCheckboxModule} from "@angular/material";
+import {
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -32,7 +38,7 @@ import {MatSliderModule, MatSlideToggleModule, MatCheckboxModule} from "@angular
   ],
   imports: [
       AgmCoreModule.forRoot({
-          apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          //apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
           libraries: ["places"]
       }),
     BrowserModule,
@@ -42,6 +48,8 @@ import {MatSliderModule, MatSlideToggleModule, MatCheckboxModule} from "@angular
     AppRoutingModule,
     MatSliderModule,
     MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatCheckboxModule,
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule
