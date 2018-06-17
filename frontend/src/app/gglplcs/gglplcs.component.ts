@@ -14,6 +14,7 @@ export class GglplcsComponent implements OnInit {
     public longitude: number;
     public searchControl: FormControl;
     public zoom: number;
+    public formatted_address: string;
 
     @ViewChild("search")
     public searchElementRef: ElementRef;
@@ -54,6 +55,7 @@ export class GglplcsComponent implements OnInit {
                     this.latitude = place.geometry.location.lat();
                     this.longitude = place.geometry.location.lng();
                     this.zoom = 12;
+                    this.formatted_address = place.formatted_address;
                 });
             });
         });

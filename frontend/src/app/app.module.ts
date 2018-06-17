@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavItemComponent } from './navbar/nav-item/nav-item.component';
@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SearchfrmComponent } from './searchfrm/searchfrm.component';
+import { SearchfrmComponent } from './categories/searchfrm/searchfrm.component';
 import { AgmCoreModule } from '@agm/core';
 import { GglplcsComponent } from './gglplcs/gglplcs.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -24,6 +24,7 @@ import {
     MatInputModule
 } from "@angular/material";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,16 +35,18 @@ import {
     HomeComponent,
     CategoriesComponent,
     SearchfrmComponent,
-    GglplcsComponent
+    GglplcsComponent,
+    SearchfrmComponent
   ],
   imports: [
       AgmCoreModule.forRoot({
-          //apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
           libraries: ["places"]
       }),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     HttpModule,
     AppRoutingModule,
     MatSliderModule,
