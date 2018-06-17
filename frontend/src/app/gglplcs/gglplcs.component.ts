@@ -3,6 +3,7 @@ import {FormControl} from "@angular/forms";
 import { } from 'googlemaps';
 import {MapsAPILoader} from "@agm/core";
 
+
 @Component({
   selector: 'app-gglplcs',
   templateUrl: './gglplcs.component.html',
@@ -16,7 +17,7 @@ export class GglplcsComponent implements OnInit {
     public zoom: number;
     public formatted_address: string;
 
-    @ViewChild("search")
+      @ViewChild("search")
     public searchElementRef: ElementRef;
 
     constructor(

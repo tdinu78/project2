@@ -1,21 +1,22 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Supplier} from "../supplier.model";
+import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 
 @Component({
   selector: 'app-searchfrm',
   templateUrl: './searchfrm.component.html',
   styleUrls: ['./searchfrm.component.scss']
 })
-export class SearchfrmComponent implements OnInit{
+export class SearchfrmComponent implements AfterViewInit{
     sdata:Supplier;
-    @Input() category;
+    @Input() s_category:string;
+    @ViewChild(GglplcsComponent) ggl_place;
 
   constructor(private http:HttpClient){
       // this.sdata = new Supplier("","","");
-      this.category="Resturante";
       this.sdata={
-          type:this.category,
+          type:this.s_category,
           name: null,
           lifecycle: null,
           place: null,
@@ -34,12 +35,11 @@ export class SearchfrmComponent implements OnInit{
       }
   }
 
-    ngOnInit(): void {
-        // if (this.category === "Resturante") {
-        //     var pp = "";
-        // }
+    ngAfterViewInit() {
+        this.sdata.place = this.ggl_place.formatted_address;
     }
+
     onSubmit():void{
-        var pp = "";
+        this.sdata.place = this.ggl_place.formatted_address;
         }
 }
