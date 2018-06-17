@@ -10,6 +10,7 @@ import java.util.Set;
 public class Role {
     private Long id;
     private RolEnum roleName;
+    private Set<Supplier> suppliers;
     private Set<User> users;
 
     @Id
@@ -28,6 +29,23 @@ public class Role {
 
     public void setName(RolEnum name) {
         this.roleName = name;
+    }
+
+    public RolEnum getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(RolEnum roleName) {
+        this.roleName = roleName;
+    }
+
+    @ManyToMany(mappedBy = "roles")
+    public Set<Supplier> getSuppliers() {
+        return suppliers;
+    }
+
+    public void setSuppliers(Set<Supplier> suppliers) {
+        this.suppliers = suppliers;
     }
 
     @ManyToMany(mappedBy = "roles")

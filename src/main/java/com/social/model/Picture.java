@@ -14,10 +14,10 @@ import java.util.Set;
 public class Picture {
     private Long id;
     private User user;
+    private Supplier supplier;
     private PictureType type;
     private String picturePath;
     private PictureKind pictureKind;
-    private Set<User> permittedUsers;
     private LifeCycle lifecycle;
 
     @Id
@@ -37,6 +37,15 @@ public class Picture {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @ManyToOne
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
 
     public PictureType getType() {
@@ -69,14 +78,5 @@ public class Picture {
 
     public void setPictureKind(PictureKind pictureKind) {
         this.pictureKind = pictureKind;
-    }
-
-    @ManyToMany(mappedBy = "permittedPictures")
-    public Set<User> getPermittedUsers() {
-        return permittedUsers;
-    }
-
-    public void setPermittedUsers(Set<User> permittedUsers) {
-        this.permittedUsers = permittedUsers;
     }
 }

@@ -41,10 +41,6 @@ public class User {
     private String descrLookingFor;
     private String descrLookingForMore;
     private LifeCycle lifecycle;
-    private Statistics statistics;
-    private Set<Message> messagesSent;
-    private Set<Message> messagesReceived;
-    private Set<Picture>permittedPictures;
 
     @Id
     public String getUsername() {
@@ -80,16 +76,6 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    @ManyToMany
-    @JoinTable(name = "user_perm", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "picture_id"))
-    public Set<Picture> getPermittedPictures() {
-        return permittedPictures;
-    }
-
-    public void setPermittedPictures(Set<Picture> permittedPictures) {
-        this.permittedPictures = permittedPictures;
     }
 
     public ZonedDateTime getMemeberSince() {
@@ -316,32 +302,5 @@ public class User {
 
     public void setPics(Set<Picture> pics) {
         this.pics = pics;
-    }
-
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user_st")
-    public Statistics getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
-
-    @OneToMany(mappedBy = "sender")
-    public Set<Message> getMessagesSent() {
-        return messagesSent;
-    }
-
-    public void setMessagesSent(Set<Message> messagesSent) {
-        this.messagesSent = messagesSent;
-    }
-
-    @OneToMany(mappedBy = "receiver")
-    public Set<Message> getMessagesReceived() {
-        return messagesReceived;
-    }
-
-    public void setMessagesReceived(Set<Message> messagesReceived) {
-        this.messagesReceived = messagesReceived;
     }
 }

@@ -12,7 +12,6 @@ public class Logins {
     private ZonedDateTime loginTime;
     private String loginLocation;
     private LifeCycle lifecycle;
-    private Statistics statistics;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,15 +45,5 @@ public class Logins {
 
     public void setLifecycle(LifeCycle lifecycle) {
         this.lifecycle = lifecycle;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "statistics_id")
-    public Statistics getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(Statistics statistics) {
-        this.statistics = statistics;
     }
 }
