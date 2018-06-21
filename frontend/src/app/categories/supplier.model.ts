@@ -1,5 +1,5 @@
 
-export class Supplier {
+export class SupplierModel {
     type:string;
     name: string;
     lifecycle: string;

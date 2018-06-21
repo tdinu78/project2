@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http'
-import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import {Supplier} from "../supplier.model";
+import {SupplierModel} from "../supplier.model";
+import {SupplierRespModel} from "../supplierResp.model";
 
 
 @Injectable()
 export class SearchfrmService {
 
-    private api = 'http://localhost:8080/api/getSearchResults';
+    private api = 'http://localhost:8080/api/searchSuppliers';
 
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
@@ -29,13 +29,17 @@ export class SearchfrmService {
 
     constructor(private http: HttpClient) {}
 
-    getSearchResults(sdata:Supplier) {
+    getSearchResults(sdata:SupplierModel) {
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };
-       return this.http.post<Supplier[]>(this.api, sdata, httpOptions)
+       return this.http.post<SupplierRespModel>(this.api, sdata, httpOptions)
            .subscribe(data=>{
-               console.log(data);
+                   if (data.rc !== 0) {
+                       throw(data.message);
+                   } else {
+                       return data.results;
+                   }
            },
         error =>this.handleError(error));
        }

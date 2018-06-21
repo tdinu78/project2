@@ -1,21 +1,21 @@
 import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
-import {Supplier} from "../supplier.model";
+import {SupplierModel} from "../supplier.model";
 import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 import {SearchfrmService} from "./searchfrm.service";
 
 @Component({
   selector: 'app-searchfrm',
   templateUrl: './searchfrm.component.html',
-  styleUrls: ['./searchfrm.component.scss']
+  styleUrls: ['./searchfrm.component.scss'],
+  providers: [SearchfrmService]
 })
 export class SearchfrmComponent implements AfterViewInit{
-    sdata:Supplier;
-    sdataArr:Array<Supplier>;
+    sdata:SupplierModel;
+    sdataArr:Array<SupplierModel>;
     @Input() s_category:string;
     @ViewChild(GglplcsComponent) ggl_place;
 
   constructor(private searchfrmService: SearchfrmService){
-      // this.sdata = new Supplier("","","");
       this.sdata={
           type:this.s_category,
           name: null,
