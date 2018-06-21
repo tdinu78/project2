@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {Supplier} from "../supplier.model";
 import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
+import {SearchfrmService} from "./searchfrm.service";
 
 @Component({
   selector: 'app-searchfrm',
@@ -10,10 +10,11 @@ import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 })
 export class SearchfrmComponent implements AfterViewInit{
     sdata:Supplier;
+    sdataArr:Array<Supplier>;
     @Input() s_category:string;
     @ViewChild(GglplcsComponent) ggl_place;
 
-  constructor(private http:HttpClient){
+  constructor(private searchfrmService: SearchfrmService){
       // this.sdata = new Supplier("","","");
       this.sdata={
           type:this.s_category,
@@ -41,5 +42,6 @@ export class SearchfrmComponent implements AfterViewInit{
 
     onSubmit():void{
         this.sdata.place = this.ggl_place.formatted_address;
+        this.searchfrmService.getSearchResults(this.sdata);
         }
 }
