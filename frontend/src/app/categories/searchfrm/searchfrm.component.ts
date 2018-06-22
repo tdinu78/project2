@@ -2,6 +2,7 @@ import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {SupplierModel} from "../supplier.model";
 import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 import {SearchfrmService} from "./searchfrm.service";
+import {NavItem} from "../../navbar/navitem.model";
 
 @Component({
   selector: 'app-searchfrm',
@@ -42,6 +43,13 @@ export class SearchfrmComponent implements AfterViewInit{
 
     onSubmit():void{
         this.sdata.place = this.ggl_place.formatted_address;
-        this.searchfrmService.getSearchResults(this.sdata);
+        this.searchfrmService.getSearchResults(this.sdata)
+            .subscribe((data : SupplierModel[])=>{
+            this.sdataArr=data;
+        },
+                (error) => {
+                    console.log('am eroarea: ', error);
+                    this.sdataArr = [];
+                });
         }
 }

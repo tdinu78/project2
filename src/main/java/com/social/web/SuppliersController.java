@@ -13,14 +13,14 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/searchSuppliers")
+@RequestMapping("/api/suppliers")
 public class SuppliersController {
     @Autowired
     SupplierRepository supplierRepository;
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(path="/search",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String,Object> signUp(@RequestBody Supplier supplier) {
         //supplier.setPassword(bCryptPasswordEncoder.encode(supplier.getPassword()));
         List resList = new ArrayList<Supplier>();
