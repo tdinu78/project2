@@ -22,13 +22,17 @@ public class SuppliersController {
 
     @RequestMapping(path="/search",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String,Object> signUp(@RequestBody Supplier supplier) {
-        //supplier.setPassword(bCryptPasswordEncoder.encode(supplier.getPassword()));
-        List resList = new ArrayList<Supplier>();
+        List resList = getSuppliersBySearchItems(supplier);
         Map result=new HashMap<String,Object>();
         resList.add(supplier);
         result.put("rc",0);
         result.put("message","OK");
         result.put("results",resList);
        return result;
+    }
+
+    private List<Supplier> getSuppliersBySearchItems(Supplier model){
+        //de facut search cu criteria api sau by example
+        return null;
     }
 }
