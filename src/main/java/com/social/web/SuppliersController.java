@@ -30,6 +30,7 @@ public class SuppliersController {
         resList.add(supplier);
         result.put("rc",0);
         result.put("message","OK");
+        result.put("count",resList.size());
         result.put("results",resList);
        return result;
     }

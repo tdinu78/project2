@@ -40,7 +40,7 @@ export class SearchfrmService {
                if (data.rc !== 0) {
                    throw(data.message);
                } else {
-                   return <SupplierModel[]> data.results;
+                   return <SupplierRespModel> data;
                }
            }),
            catchError(this.handleError)

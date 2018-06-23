@@ -9,12 +9,10 @@ import java.util.Map;
 import java.util.Set;
 
 @Entity
-@Table(name = "suppliers")
 public class Supplier {
     private String name;
     private String email;
     private String password;
-    private String passwordConfirm;
     private boolean agreedTerms;
     private Set<Role> roles;
     private ZonedDateTime memeberSince;
@@ -55,14 +53,6 @@ public class Supplier {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getPasswordConfirm() {
-        return passwordConfirm;
-    }
-
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
     }
 
     public boolean isAgreedTerms() {

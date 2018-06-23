@@ -3,6 +3,7 @@ import {SupplierModel} from "../supplier.model";
 import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 import {SearchfrmService} from "./searchfrm.service";
 import {NavItem} from "../../navbar/navitem.model";
+import {SupplierRespModel} from "../supplierResp.model";
 
 @Component({
   selector: 'app-searchfrm',
@@ -13,6 +14,7 @@ import {NavItem} from "../../navbar/navitem.model";
 export class SearchfrmComponent implements AfterViewInit{
     sdata:SupplierModel;
     sdataArr:Array<SupplierModel>;
+    sdataArrCount:number;
     @Input() s_category:string;
     @ViewChild(GglplcsComponent) ggl_place;
 
@@ -44,8 +46,9 @@ export class SearchfrmComponent implements AfterViewInit{
     onSubmit():void{
         this.sdata.place = this.ggl_place.formatted_address;
         this.searchfrmService.getSearchResults(this.sdata)
-            .subscribe((data : SupplierModel[])=>{
-            this.sdataArr=data;
+            .subscribe((data : SupplierRespModel)=>{
+            this.sdataArr=data.results;
+            this.sdataArrCount=data.count;
         },
                 (error) => {
                     console.log('am eroarea: ', error);
