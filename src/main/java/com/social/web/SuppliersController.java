@@ -1,5 +1,6 @@
 package com.social.web;
 
+import com.social.dao.DataService;
 import com.social.model.Supplier;
 import com.social.repository.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +20,17 @@ public class SuppliersController {
     SupplierRepository supplierRepository;
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    DataService dataService;
 
     @RequestMapping(path="/search",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Map<String,Object> signUp(@RequestBody Supplier supplier) {
-        List resList = getSuppliersBySearchItems(supplier);
+        List<Supplier> resList = dataService.getSuppliersByModel(supplier);
         Map result=new HashMap<String,Object>();
         resList.add(supplier);
         result.put("rc",0);
         result.put("message","OK");
         result.put("results",resList);
        return result;
-    }
-
-    private List<Supplier> getSuppliersBySearchItems(Supplier model){
-        //de facut search cu criteria api sau by example
-        return null;
     }
 }

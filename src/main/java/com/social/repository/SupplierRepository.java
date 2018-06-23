@@ -4,8 +4,10 @@ import com.social.model.Supplier;
 import com.social.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface SupplierRepository extends JpaRepository<Supplier, Long> {
-    User findByName(String name);
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.List;
 
-    User findByEmail(String email);
+public interface SupplierRepository extends JpaRepository<Supplier, Long> {
+
 }

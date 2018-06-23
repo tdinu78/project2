@@ -4,6 +4,8 @@ import com.social.enums.LifeCycle;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 @Entity
@@ -190,5 +192,23 @@ public class Supplier {
 
     public void setParking(boolean parking) {
         this.parking = parking;
+    }
+
+    @Transient
+    public Map<String,Object> getNotNullSearchFields(){
+        Map<String, Object> result = new HashMap();
+        if(name != null) result.put("name",name);
+        if(place != null) result.put("name",name);
+        if(minPrice != null) result.put("name",name);
+        if(minInv != null) result.put("name",name);
+        if(maxInv != null) result.put("name",name);
+        if(outdoor) result.put("outdoor",outdoor);
+        if(accommodation ) result.put("accommodation",accommodation);
+        if(fireworks) result.put("fireworks",fireworks);
+        if(events) result.put("events",events);
+        if(preparations) result.put("preparations",preparations);
+        if(parking) result.put("parking",parking);
+
+        return result;
     }
 }
