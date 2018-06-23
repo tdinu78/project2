@@ -43,7 +43,8 @@ public class ClientSideErrorLogger {
             log.warn("This request is too big and its content will not be logged. Headers: " + headersInfo);
         } else {
             try {
-                log.warn("Client-side error occurred. Request headers: " + headersInfo  + "\n" + "Request body: " +  request.getReader().lines().collect(Collectors.joining(System.lineSeparator())));
+                log.warn("Client-side error occurred. Request headers: " + headersInfo  + "\n" + "Request body: " +
+                        request.getReader().lines().collect(Collectors.joining(System.lineSeparator())));
             } catch (IOException e) {
                 log.debug("Client-side error occurred but system cannot process error info.");
             }
