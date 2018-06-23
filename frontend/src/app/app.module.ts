@@ -16,6 +16,7 @@ import { AgmCoreModule } from '@agm/core';
 import { GglplcsComponent } from './gglplcs/gglplcs.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {
     MatSliderModule,
     MatSlideToggleModule,
@@ -40,7 +41,7 @@ import {
   ],
   imports: [
       AgmCoreModule.forRoot({
-          apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          //apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
           libraries: ["places"]
       }),
     BrowserModule,
@@ -55,6 +56,7 @@ import {
     MatInputModule,
     MatCheckboxModule,
     MDBBootstrapModule.forRoot(),
+    MatGridListModule,
     BrowserAnimationsModule
   ],
   providers: [],
