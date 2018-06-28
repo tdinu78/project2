@@ -41,7 +41,7 @@ import {
   ],
   imports: [
       AgmCoreModule.forRoot({
-          //apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
+          apiKey: "AIzaSyDviOSCqGI5VGN8kP4ltqtxt930uMh5vKg",
           libraries: ["places"]
       }),
     BrowserModule,

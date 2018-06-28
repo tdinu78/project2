@@ -1,4 +1,4 @@
-import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, NgZone, OnInit, Output, ViewChild} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import { } from 'googlemaps';
 import {MapsAPILoader} from "@agm/core";
@@ -19,6 +19,8 @@ export class GglplcsComponent implements OnInit {
 
       @ViewChild("search")
     public searchElementRef: ElementRef;
+
+    @Output() updatedSearch=new EventEmitter();
 
     constructor(
         private mapsAPILoader: MapsAPILoader,
@@ -57,6 +59,7 @@ export class GglplcsComponent implements OnInit {
                     this.longitude = place.geometry.location.lng();
                     this.zoom = 12;
                     this.formatted_address = place.formatted_address;
+                    this.updatedSearch.emit(this.formatted_address);
                 });
             });
         });

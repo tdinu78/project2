@@ -11,13 +11,12 @@ import {SupplierRespModel} from "../supplierResp.model";
   styleUrls: ['./searchfrm.component.scss'],
   providers: [SearchfrmService]
 })
-export class SearchfrmComponent implements AfterViewInit{
+export class SearchfrmComponent{
     @Output() searchDone=new EventEmitter();
     sdata:SupplierModel;
     sdataArr:Array<SupplierModel>;
     sdataArrCount:number;
     @Input() s_category:string;
-    @ViewChild(GglplcsComponent) ggl_place;
 
   constructor(private searchfrmService: SearchfrmService){
       this.sdata={
@@ -39,13 +38,15 @@ export class SearchfrmComponent implements AfterViewInit{
           password: null,
       }
   }
-
-    ngAfterViewInit() {
-        this.sdata.place = this.ggl_place.formatted_address;
+    updatePlace(place){
+        if(place!=null) {
+            this.sdata.place = place;
+        }else{
+            //are eroare
+        }
     }
 
     onSubmit():void{
-        this.sdata.place = this.ggl_place.formatted_address;
         this.searchfrmService.getSearchResults(this.sdata)
             .subscribe((data : SupplierRespModel)=>{
             this.sdataArr=data.results;
