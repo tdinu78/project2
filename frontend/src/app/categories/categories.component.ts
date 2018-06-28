@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavItem } from '../navbar/navitem.model';
 import { ActivatedRoute } from '@angular/router';
-import { SearchfrmComponent } from './searchfrm/searchfrm.component';
 import {SupplierRespModel} from "./supplierResp.model";
 
 @Component({
@@ -11,7 +9,6 @@ import {SupplierRespModel} from "./supplierResp.model";
 })
 export class CategoriesComponent implements OnInit {
 
-  host: {'(window:keydown)': 'hotkeys($event)'};
   @Input() category;
   public supplierRespModel:SupplierRespModel;
   public selectedImage;
@@ -103,20 +100,4 @@ export class CategoriesComponent implements OnInit {
         this.selectedImage= image;
     }
 
-    navigate(forward){
-        var index = this.datasource.indexOf(this.selectedImage)+(forward ? 1: -1);
-        if(index >= 0 && index < this.datasource.length){
-            this.selectedImage = this.datasource[index];
-        }
-    }
-
-    hotkeys(event){
-        if(this.selectedImage){
-            if (event.keyCode == 37){
-                this.navigate(false);
-            }else if(event.keyCode == 39){
-                this.navigate(true);
-            }
-        }
-    }
 }
