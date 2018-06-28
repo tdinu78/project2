@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http'
-import { throwError } from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {SupplierModel} from "../supplier.model";
 import {SupplierRespModel} from "../supplierResp.model";
 import {map} from "rxjs/internal/operators";
@@ -31,7 +31,7 @@ export class SearchfrmService {
 
     constructor(private http: HttpClient) {}
 
-    getSearchResults(sdata:SupplierModel) {
+    getSearchResults(sdata:SupplierModel):Observable<SupplierRespModel> {
         const httpOptions = {
             headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         };

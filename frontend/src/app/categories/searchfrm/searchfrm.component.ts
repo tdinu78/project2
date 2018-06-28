@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {SupplierModel} from "../supplier.model";
 import {GglplcsComponent} from "../../gglplcs/gglplcs.component";
 import {SearchfrmService} from "./searchfrm.service";
@@ -12,6 +12,7 @@ import {SupplierRespModel} from "../supplierResp.model";
   providers: [SearchfrmService]
 })
 export class SearchfrmComponent implements AfterViewInit{
+    @Output() searchDone=new EventEmitter();
     sdata:SupplierModel;
     sdataArr:Array<SupplierModel>;
     sdataArrCount:number;
@@ -49,10 +50,12 @@ export class SearchfrmComponent implements AfterViewInit{
             .subscribe((data : SupplierRespModel)=>{
             this.sdataArr=data.results;
             this.sdataArrCount=data.count;
+            this.searchDone.emit(data);
         },
-                (error) => {
+                error => {
                     console.log('am eroarea: ', error);
                     this.sdataArr = [];
+                    this.searchDone.emit(null);
                 });
         }
 }

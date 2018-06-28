@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { NavItem } from '../navbar/navitem.model';
 import { ActivatedRoute } from '@angular/router';
 import { SearchfrmComponent } from './searchfrm/searchfrm.component';
+import {SupplierRespModel} from "./supplierResp.model";
 
 @Component({
   selector: 'app-categories',
@@ -12,6 +13,7 @@ export class CategoriesComponent implements OnInit {
 
   host: {'(window:keydown)': 'hotkeys($event)'};
   @Input() category;
+  public supplierRespModel:SupplierRespModel;
   public selectedImage;
   public datasource= [
       {
@@ -88,6 +90,14 @@ export class CategoriesComponent implements OnInit {
     );
 
   }
+
+    updateGrid(srm){
+      if(srm!=null) {
+          this.supplierRespModel = srm;
+      }else{
+          //are eroare
+      }
+    }
 
     setSelectedImage(image){
         this.selectedImage= image;
