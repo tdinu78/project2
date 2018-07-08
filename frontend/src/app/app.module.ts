@@ -24,6 +24,7 @@ import {
     MatFormFieldModule,
     MatInputModule
 } from "@angular/material";
+import { InfiniteScrollerDirective } from './infinite-scroller.directive';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {
     CategoriesComponent,
     SearchfrmComponent,
     GglplcsComponent,
-    SearchfrmComponent
+    InfiniteScrollerDirective
   ],
   imports: [
       AgmCoreModule.forRoot({

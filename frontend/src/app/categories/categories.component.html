@@ -10,12 +10,12 @@
                   *ngFor="let image of datasource"
                   [colspan]=1
                   [rowspan]=1>
-            <img src="{{image.url}}" class="tn"
+            <img src="{{image.phoneNumber}}" class="tn"
                  width="200" height="200"
                  (click)=setSelectedImage(image)>
             <div class="caption">
-              <p><strong>{{image.title}}</strong></p>
-              <p>{{image.caption}}</p>
+              <p><strong>{{image.name}}</strong></p>
+              <p>{{image.email}}</p>
             </div>
           </mat-grid-tile>
         </mat-grid-list>

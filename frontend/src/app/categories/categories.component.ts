@@ -12,68 +12,7 @@ export class CategoriesComponent implements OnInit {
   @Input() category;
   public supplierRespModel:SupplierRespModel;
   public selectedImage;
-  public datasource= [
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-      {
-          "url":"http://lorempixel.com/200/200/",
-          "title":"Aliquam erat volutpat",
-          "caption":"imperdiet imperdiet. Nullam ut ligula vitae arcu vulputate dictum ut quis elit."
-      },
-    ];
+  public datasource= [];
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -91,6 +30,7 @@ export class CategoriesComponent implements OnInit {
     updateGrid(srm){
       if(srm!=null) {
           this.supplierRespModel = srm;
+          this.datasource=this.supplierRespModel.results;
       }else{
           //are eroare
       }
